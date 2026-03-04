@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>細胞培養手技 教育サービス（学習者向け）</title>
+
+  <!-- Tailwind CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <meta name="description" content="細胞培養手技を、勘と経験から再現性のあるスキルへ。手技のばらつきを可視化し、振り返りと改善を回す学習者向け教育サービス。" />
+</head>
+
+<body class="bg-white text-slate-900">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+      <a href="../" class="font-semibold tracking-tight">手技教育（デモLP）</a>
+      <nav class="flex items-center gap-3 text-sm">
+        <a href="./" class="rounded-full px-3 py-1 bg-slate-900 text-white">学習者向け</a>
+        <a href="../org/" class="rounded-full px-3 py-1 border border-slate-300 hover:bg-slate-50">組織向け</a>
+        <a href="#cta" class="rounded-full px-3 py-1 bg-emerald-600 text-white hover:bg-emerald-700">デモ相談</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="mx-auto max-w-6xl px-4 pt-14 pb-10">
+    <div class="grid gap-10 md:grid-cols-2 md:items-center">
+      <div>
+        <p class="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-700">
+          細胞培養手技の「上達」をデータで支援
+        </p>
+        <h1 class="mt-4 text-3xl font-bold leading-tight tracking-tight md:text-5xl">
+          細胞培養を、<br class="hidden md:block" />
+          勘から<strong class="text-emerald-600">再現性</strong>へ。
+        </h1>
+        <p class="mt-4 text-base leading-relaxed text-slate-700 md:text-lg">
+          「なぜ失敗したかわからない」「教える人で言うことが違う」――
+          手技のばらつきを可視化し、振り返りと改善を回すことで、上達の道筋をつくります。
+        </p>
+
+        <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+          <a href="#cta" class="inline-flex items-center justify-center rounded-xl bg-emerald-600 px-5 py-3 text-white font-semibold hover:bg-emerald-700">
+            体験デモを相談する
+          </a>
+          <a href="#how" class="inline-flex items-center justify-center rounded-xl border border-slate-300 px-5 py-3 font-semibold hover:bg-slate-50">
+            どう使うの？
+          </a>
+        </div>
+
+        <div class="mt-6 grid grid-cols-3 gap-3 text-center text-xs text-slate-600">
+          <div class="rounded-xl border border-slate-200 p-3">
+            <div class="text-lg font-bold text-slate-900">可視化</div>
+            手技の差分
+          </div>
+          <div class="rounded-xl border border-slate-200 p-3">
+            <div class="text-lg font-bold text-slate-900">言語化</div>
+            改善点
+          </div>
+          <div class="rounded-xl border border-slate-200 p-3">
+            <div class="text-lg font-bold text-slate-900">伴走</div>
+            学習設計
+          </div>
+        </div>
+      </div>
+
+      <!-- Mock card -->
+      <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+        <div class="flex items-center justify-between">
+          <div class="font-semibold">学習ダッシュボード（例）</div>
+          <div class="text-xs text-slate-500">デモ</div>
+        </div>
+        <div class="mt-4 space-y-3">
+          <div class="rounded-xl bg-white p-4 border border-slate-200">
+            <div class="text-sm font-semibold">今回のセッション</div>
+            <div class="mt-1 text-xs text-slate-600">無菌操作 / ピペッティング / 手順の再現性</div>
+          </div>
+          <div class="rounded-xl bg-white p-4 border border-slate-200">
+            <div class="flex items-center justify-between">
+              <div class="text-sm font-semibold">改善ポイント（例）</div>
+              <span class="text-xs rounded-full bg-emerald-50 text-emerald-700 px-2 py-1">優先度 高</span>
+            </div>
+            <ul class="mt-2 list-disc pl-5 text-sm text-slate-700 space-y-1">
+              <li>手順の「間」が長い工程がある（コンタミリスク増）</li>
+              <li>手首の角度が一定でない（分注量のブレ）</li>
+              <li>器具配置の迷いが発生（作業負荷）</li>
+            </ul>
+          </div>
+          <div class="rounded-xl bg-white p-4 border border-slate-200">
+            <div class="text-sm font-semibold">次の練習メニュー（例）</div>
+            <div class="mt-2 grid grid-cols-2 gap-2 text-xs">
+              <div class="rounded-lg bg-slate-50 border border-slate-200 p-2">器具配置の型</div>
+              <div class="rounded-lg bg-slate-50 border border-slate-200 p-2">分注の一定化</div>
+              <div class="rounded-lg bg-slate-50 border border-slate-200 p-2">動線の短縮</div>
+              <div class="rounded-lg bg-slate-50 border border-slate-200 p-2">チェックリスト</div>
+            </div>
+          </div>
+        </div>
+        <p class="mt-3 text-xs text-slate-500">
+          ※上記はイメージです。実際の指標・表示はPoCの設計に合わせて調整します。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pain -->
+  <section class="border-t border-slate-200 bg-white">
+    <div class="mx-auto max-w-6xl px-4 py-12">
+      <h2 class="text-2xl font-bold tracking-tight">こんな「あるある」ありませんか？</h2>
+      <div class="mt-6 grid gap-4 md:grid-cols-3">
+        <div class="rounded-2xl border border-slate-200 p-6">
+          <div class="text-sm font-semibold">失敗の理由がわからない</div>
+          <p class="mt-2 text-sm text-slate-700">
+            条件が変わると応用が効かず、同じミスを繰り返してしまう。
+          </p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 p-6">
+          <div class="text-sm font-semibold">教える人で言うことが違う</div>
+          <p class="mt-2 text-sm text-slate-700">
+            暗黙知が多く、コツが言語化されていない。
+          </p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 p-6">
+          <div class="text-sm font-semibold">焦り・緊張で手がブレる</div>
+          <p class="mt-2 text-sm text-slate-700">
+            手順が頭に入っていても、実作業で再現できない。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How -->
+  <section id="how" class="border-t border-slate-200 bg-slate-50">
+    <div class="mx-auto max-w-6xl px-4 py-12">
+      <h2 class="text-2xl font-bold tracking-tight">どうやって上達を支援するの？</h2>
+      <p class="mt-2 text-sm text-slate-700">
+        “計測 → 振り返り → 改善” を回して、上達の再現性をつくります。
+      </p>
+
+      <div class="mt-6 grid gap-4 md:grid-cols-3">
+        <div class="rounded-2xl bg-white border border-slate-200 p-6">
+          <div class="text-xs font-semibold text-emerald-700">STEP 1</div>
+          <div class="mt-2 text-sm font-semibold">手技を計測（可視化）</div>
+          <p class="mt-2 text-sm text-slate-700">
+            作業の流れ・手順・動作の特徴を捉え、比較できる形にします。
+          </p>
+        </div>
+        <div class="rounded-2xl bg-white border border-slate-200 p-6">
+          <div class="text-xs font-semibold text-emerald-700">STEP 2</div>
+          <div class="mt-2 text-sm font-semibold">振り返り（原因の言語化）</div>
+          <p class="mt-2 text-sm text-slate-700">
+            どこで詰まったか、何がブレたかを短時間で振り返れます。
+          </p>
+        </div>
+        <div class="rounded-2xl bg-white border border-slate-200 p-6">
+          <div class="text-xs font-semibold text-emerald-700">STEP 3</div>
+          <div class="mt-2 text-sm font-semibold">改善メニュー（次の一手）</div>
+          <p class="mt-2 text-sm text-slate-700">
+            弱点に合わせた練習メニューで、次回の成功確率を上げます。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="border-t border-slate-200 bg-white">
+    <div class="mx-auto max-w-6xl px-4 py-12">
+      <h2 class="text-2xl font-bold tracking-tight">FAQ</h2>
+      <div class="mt-6 space-y-3">
+        <details class="rounded-2xl border border-slate-200 p-5">
+          <summary class="cursor-pointer font-semibold">初心者でも使えますか？</summary>
+          <p class="mt-2 text-sm text-slate-700">
+            はい。上達のための「振り返りの型」を提供するため、経験が浅いほど効果が出やすい設計です。
+          </p>
+        </details>
+        <details class="rounded-2xl border border-slate-200 p-5">
+          <summary class="cursor-pointer font-semibold">医療的な効果を保証するものですか？</summary>
+          <p class="mt-2 text-sm text-slate-700">
+            本サービスは教育・技能支援を目的としています。個別の研究成果や医療効果を保証するものではありません。
+          </p>
+        </details>
+        <details class="rounded-2xl border border-slate-200 p-5">
+          <summary class="cursor-pointer font-semibold">費用はどれくらいですか？</summary>
+          <p class="mt-2 text-sm text-slate-700">
+            PoC（試行）設計や利用形態により異なります。まずは状況を伺い、最小構成から提案します。
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta" class="border-t border-slate-200 bg-slate-900 text-white">
+    <div class="mx-auto max-w-6xl px-4 py-12">
+      <div class="grid gap-6 md:grid-cols-2 md:items-center">
+        <div>
+          <h2 class="text-2xl font-bold tracking-tight">学習者向けデモを見てみる</h2>
+          <p class="mt-2 text-sm text-slate-200">
+            研究室の条件や学習者のレベルに合わせて、PoCの設計から一緒に詰められます。
+          </p>
+        </div>
+        <div class="rounded-2xl bg-white/5 p-6 border border-white/10">
+          <p class="text-sm text-slate-200">連絡手段（仮）</p>
+          <p class="mt-2 text-sm text-slate-100">
+            ここは後で「問い合わせフォーム」または「メール・カレンダーリンク」に置き換えます。
+          </p>
+          <div class="mt-4 flex flex-col gap-3 sm:flex-row">
+            <a href="#" class="inline-flex items-center justify-center rounded-xl bg-emerald-600 px-5 py-3 font-semibold hover:bg-emerald-700">
+              フォーム（後で差し替え）
+            </a>
+            <a href="../" class="inline-flex items-center justify-center rounded-xl border border-white/20 px-5 py-3 font-semibold hover:bg-white/10">
+              トップへ
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-8 text-xs text-slate-400">
+        © 手技教育 デモLP
+      </p>
+    </div>
+  </section>
+</body>
+</html>
