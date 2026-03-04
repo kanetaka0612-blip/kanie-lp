@@ -5,222 +5,373 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>細胞培養手技 教育サービス（学習者向け）</title>
 
-  <!-- Tailwind CSS (CDN) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] } } } }
+  </script>
 
   <meta name="description" content="細胞培養手技を、勘と経験から再現性のあるスキルへ。手技のばらつきを可視化し、振り返りと改善を回す学習者向け教育サービス。" />
 </head>
 
-<body class="bg-white text-slate-900">
-  <!-- Header -->
-  <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur">
-    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-      <a href="../" class="font-semibold tracking-tight">手技教育（デモLP）</a>
-      <nav class="flex items-center gap-3 text-sm">
-        <a href="./" class="rounded-full px-3 py-1 bg-slate-900 text-white">学習者向け</a>
-        <a href="../org/" class="rounded-full px-3 py-1 border border-slate-300 hover:bg-slate-50">組織向け</a>
-        <a href="#cta" class="rounded-full px-3 py-1 bg-emerald-600 text-white hover:bg-emerald-700">デモ相談</a>
+<body class="font-sans bg-white text-slate-900 antialiased">
+  <!-- Header - SaaS風 -->
+  <header class="fixed top-0 left-0 right-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
+      <a href="../" class="text-lg font-bold tracking-tight text-slate-900">手技教育</a>
+      <nav class="flex items-center gap-1">
+        <a href="./" class="rounded-lg px-3 py-2 text-sm font-medium text-emerald-600 bg-emerald-50">学習者向け</a>
+        <a href="../org/" class="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100 transition-colors">組織向け</a>
+        <a href="#cta" class="ml-2 rounded-lg px-4 py-2 text-sm font-semibold text-white bg-emerald-500 hover:bg-emerald-600 transition-colors shadow-sm">無料で試す</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="mx-auto max-w-6xl px-4 pt-14 pb-10">
-    <div class="grid gap-10 md:grid-cols-2 md:items-center">
-      <div>
-        <p class="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-700">
-          細胞培養手技の「上達」をデータで支援
-        </p>
-        <h1 class="mt-4 text-3xl font-bold leading-tight tracking-tight md:text-5xl">
-          細胞培養を、<br class="hidden md:block" />
-          勘から<strong class="text-emerald-600">再現性</strong>へ。
+  <!-- Hero - 強化 -->
+  <section id="hero" class="relative overflow-hidden pt-24 pb-20 lg:pt-28 lg:pb-24">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,#d1fae5,transparent)]"></div>
+    <div class="absolute top-40 right-0 w-72 h-72 bg-cyan-100/40 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-emerald-100/30 rounded-full blur-3xl"></div>
+
+    <div class="relative mx-auto max-w-6xl px-6">
+      <div class="flex flex-col items-center text-center">
+        <span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 border border-emerald-100 px-3 py-1 text-xs font-medium text-emerald-700">
+          <span class="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          細胞培養手技の習得をデータで支援
+        </span>
+        <h1 class="mt-8 max-w-4xl text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
+          「勘と経験」を<br class="sm:hidden" />
+          <span class="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">再現可能なスキル</span>に
         </h1>
-        <p class="mt-4 text-base leading-relaxed text-slate-700 md:text-lg">
-          「なぜ失敗したかわからない」「教える人で言うことが違う」――
-          手技のばらつきを可視化し、振り返りと改善を回すことで、上達の道筋をつくります。
+        <p class="mt-6 max-w-2xl text-lg text-slate-600 leading-relaxed">
+          なぜ失敗したかわからない。教える人で言うことが違う。—<br class="hidden sm:block" />
+          手技のばらつきを可視化し、<strong>計測→振り返り→改善</strong>のサイクルで、確実に上達する道筋をつくります。
         </p>
 
-        <div class="mt-6 flex flex-col gap-3 sm:flex-row">
-          <a href="#cta" class="inline-flex items-center justify-center rounded-xl bg-emerald-600 px-5 py-3 text-white font-semibold hover:bg-emerald-700">
-            体験デモを相談する
+        <div class="mt-10 flex flex-col sm:flex-row gap-4">
+          <a href="#cta" class="group inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-500 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-emerald-500/30 hover:bg-emerald-600 hover:shadow-emerald-500/40 transition-all">
+            無料デモを申し込む
+            <svg class="h-4 w-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
           </a>
-          <a href="#how" class="inline-flex items-center justify-center rounded-xl border border-slate-300 px-5 py-3 font-semibold hover:bg-slate-50">
-            どう使うの？
+          <a href="#mechanism" class="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-slate-200 px-8 py-4 text-base font-semibold text-slate-700 hover:border-slate-300 hover:bg-slate-50 transition-colors">
+            仕組みを見る
           </a>
         </div>
 
-        <div class="mt-6 grid grid-cols-3 gap-3 text-center text-xs text-slate-600">
-          <div class="rounded-xl border border-slate-200 p-3">
-            <div class="text-lg font-bold text-slate-900">可視化</div>
-            手技の差分
-          </div>
-          <div class="rounded-xl border border-slate-200 p-3">
-            <div class="text-lg font-bold text-slate-900">言語化</div>
-            改善点
-          </div>
-          <div class="rounded-xl border border-slate-200 p-3">
-            <div class="text-lg font-bold text-slate-900">伴走</div>
-            学習設計
-          </div>
+        <div class="mt-14 flex flex-wrap justify-center gap-8 text-sm text-slate-500">
+          <span class="flex items-center gap-2"><svg class="h-5 w-5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>手技の可視化</span>
+          <span class="flex items-center gap-2"><svg class="h-5 w-5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>改善点の言語化</span>
+          <span class="flex items-center gap-2"><svg class="h-5 w-5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>個別フィードバック</span>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Mock card -->
-      <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
-        <div class="flex items-center justify-between">
-          <div class="font-semibold">学習ダッシュボード（例）</div>
-          <div class="text-xs text-slate-500">デモ</div>
-        </div>
-        <div class="mt-4 space-y-3">
-          <div class="rounded-xl bg-white p-4 border border-slate-200">
-            <div class="text-sm font-semibold">今回のセッション</div>
-            <div class="mt-1 text-xs text-slate-600">無菌操作 / ピペッティング / 手順の再現性</div>
+  <!-- 課題 -->
+  <section id="problem" class="border-t border-slate-200 bg-slate-50/80 py-20">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="text-center">
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">こんな悩み、ありませんか？</h2>
+        <p class="mt-3 text-lg text-slate-600">細胞培養の習得で直面しがちな課題</p>
+      </div>
+
+      <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="rounded-2xl bg-white p-6 shadow-sm border border-slate-100 hover:shadow-md hover:border-emerald-100 transition-all">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-red-500">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
           </div>
-          <div class="rounded-xl bg-white p-4 border border-slate-200">
-            <div class="flex items-center justify-between">
-              <div class="text-sm font-semibold">改善ポイント（例）</div>
-              <span class="text-xs rounded-full bg-emerald-50 text-emerald-700 px-2 py-1">優先度 高</span>
-            </div>
-            <ul class="mt-2 list-disc pl-5 text-sm text-slate-700 space-y-1">
-              <li>手順の「間」が長い工程がある（コンタミリスク増）</li>
-              <li>手首の角度が一定でない（分注量のブレ）</li>
-              <li>器具配置の迷いが発生（作業負荷）</li>
+          <h3 class="mt-4 font-semibold text-slate-900">失敗の理由がわからない</h3>
+          <p class="mt-2 text-sm text-slate-600">同じミスを繰り返すが、何が悪いか特定できず、改善の手がかりがない。</p>
+        </div>
+        <div class="rounded-2xl bg-white p-6 shadow-sm border border-slate-100 hover:shadow-md hover:border-emerald-100 transition-all">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-50 text-amber-500">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
+          </div>
+          <h3 class="mt-4 font-semibold text-slate-900">教える人で言うことが違う</h3>
+          <p class="mt-2 text-sm text-slate-600">暗黙知が多く、コツが言語化されていない。誰に聞くかで答えが変わる。</p>
+        </div>
+        <div class="rounded-2xl bg-white p-6 shadow-sm border border-slate-100 hover:shadow-md hover:border-emerald-100 transition-all">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-50 text-orange-500">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          </div>
+          <h3 class="mt-4 font-semibold text-slate-900">上達の道筋が見えない</h3>
+          <p class="mt-2 text-sm text-slate-600">いつ一人前になるかわからず、モチベーションが続きにくい。</p>
+        </div>
+        <div class="rounded-2xl bg-white p-6 shadow-sm border border-slate-100 hover:shadow-md hover:border-emerald-100 transition-all">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-rose-50 text-rose-500">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+          </div>
+          <h3 class="mt-4 font-semibold text-slate-900">焦り・緊張で手がブレる</h3>
+          <p class="mt-2 text-sm text-slate-600">頭ではわかっているのに、実作業で再現できない。練習不足か、別の要因か不明。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 解決 -->
+  <section id="solution" class="border-t border-slate-200 py-20">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="text-center">
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">手技教育が解決する</h2>
+        <p class="mt-3 text-lg text-slate-600">「勘」に依存せず、データに基づいて上達する</p>
+      </div>
+
+      <div class="mt-12 grid gap-8 lg:grid-cols-2 lg:items-center">
+        <div class="space-y-6">
+          <div class="rounded-2xl border border-emerald-200 bg-emerald-50/50 p-6">
+            <h3 class="font-semibold text-emerald-800">従来の学習 → 手技教育導入後</h3>
+            <ul class="mt-4 space-y-3 text-sm text-slate-700">
+              <li class="flex gap-3"><span class="text-red-500">✕</span>失敗理由が不明 → <span class="text-emerald-600 font-medium">✓</span> 手技の差分を可視化し改善ポイントが明確に</li>
+              <li class="flex gap-3"><span class="text-red-500">✕</span>指導がバラバラ → <span class="text-emerald-600 font-medium">✓</span> データに基づく共通基準で一貫したフィードバック</li>
+              <li class="flex gap-3"><span class="text-red-500">✕</span>道筋が見えない → <span class="text-emerald-600 font-medium">✓</span> 次の練習メニューが提示され上達の道筋が見える</li>
+              <li class="flex gap-3"><span class="text-red-500">✕</span>再現性がない → <span class="text-emerald-600 font-medium">✓</span> 計測→振り返り→改善のサイクルで再現性を獲得</li>
             </ul>
           </div>
-          <div class="rounded-xl bg-white p-4 border border-slate-200">
-            <div class="text-sm font-semibold">次の練習メニュー（例）</div>
-            <div class="mt-2 grid grid-cols-2 gap-2 text-xs">
-              <div class="rounded-lg bg-slate-50 border border-slate-200 p-2">器具配置の型</div>
-              <div class="rounded-lg bg-slate-50 border border-slate-200 p-2">分注の一定化</div>
-              <div class="rounded-lg bg-slate-50 border border-slate-200 p-2">動線の短縮</div>
-              <div class="rounded-lg bg-slate-50 border border-slate-200 p-2">チェックリスト</div>
+          <p class="text-sm text-slate-600">初心者ほど効果が出やすい設計。経験が浅い段階から「振り返りの型」を身につけられます。</p>
+        </div>
+
+        <!-- プロダクトモック -->
+        <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl shadow-slate-200/50">
+          <div class="flex items-center gap-2 border-b border-slate-200 bg-slate-50 px-4 py-2.5">
+            <div class="flex gap-1.5">
+              <div class="h-2.5 w-2.5 rounded-full bg-slate-300"></div>
+              <div class="h-2.5 w-2.5 rounded-full bg-slate-300"></div>
+              <div class="h-2.5 w-2.5 rounded-full bg-slate-300"></div>
+            </div>
+            <span class="flex-1 text-center text-xs text-slate-500">ダッシュボード</span>
+          </div>
+          <div class="p-5 space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-sm font-medium text-slate-800">今回のセッション</span>
+              <span class="rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-medium text-emerald-700">完了</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="rounded-lg bg-emerald-100 px-2 py-1 text-xs text-emerald-700">無菌操作</span>
+              <span class="rounded-lg bg-emerald-100 px-2 py-1 text-xs text-emerald-700">ピペッティング</span>
+              <span class="rounded-lg bg-emerald-100 px-2 py-1 text-xs text-emerald-700">手順再現性</span>
+            </div>
+            <div class="rounded-lg border border-slate-200 bg-slate-50 p-3">
+              <p class="text-xs font-medium text-slate-600">改善ポイント</p>
+              <p class="mt-1 text-xs text-slate-700">手順の「間」が長い / 手首角度のブレ / 器具配置の迷い</p>
+            </div>
+            <div class="rounded-lg bg-emerald-50 border border-emerald-100 p-3">
+              <p class="text-xs font-medium text-emerald-700">次の練習メニュー</p>
+              <p class="mt-1 text-xs text-slate-600">器具配置の型・分注の一定化</p>
             </div>
           </div>
         </div>
-        <p class="mt-3 text-xs text-slate-500">
-          ※上記はイメージです。実際の指標・表示はPoCの設計に合わせて調整します。
-        </p>
       </div>
     </div>
   </section>
 
-  <!-- Pain -->
-  <section class="border-t border-slate-200 bg-white">
-    <div class="mx-auto max-w-6xl px-4 py-12">
-      <h2 class="text-2xl font-bold tracking-tight">こんな「あるある」ありませんか？</h2>
-      <div class="mt-6 grid gap-4 md:grid-cols-3">
-        <div class="rounded-2xl border border-slate-200 p-6">
-          <div class="text-sm font-semibold">失敗の理由がわからない</div>
-          <p class="mt-2 text-sm text-slate-700">
-            条件が変わると応用が効かず、同じミスを繰り返してしまう。
-          </p>
+  <!-- 仕組み - 教育構造の図（SVG） -->
+  <section id="mechanism" class="border-t border-slate-200 bg-slate-50/80 py-20">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="text-center">
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">教育の仕組み</h2>
+        <p class="mt-3 text-lg text-slate-600">計測 → 振り返り → 改善 のサイクルで上達を加速</p>
+      </div>
+
+      <!-- 教育構造図 SVG -->
+      <div class="mt-14 flex justify-center">
+        <svg class="w-full max-w-3xl" viewBox="0 0 800 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#10b981"/><stop offset="100%" style="stop-color:#14b8a6"/></linearGradient>
+            <linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#10b981;stop-opacity:0.2"/><stop offset="100%" style="stop-color:#14b8a6;stop-opacity:0"/></linearGradient>
+          </defs>
+          <!-- 矢印・フロー -->
+          <path d="M140 140 L200 140" stroke="#10b981" stroke-width="2" stroke-dasharray="4 4"/>
+          <path d="M300 140 L360 140" stroke="#10b981" stroke-width="2" stroke-dasharray="4 4"/>
+          <path d="M460 140 L520 140" stroke="#10b981" stroke-width="2" stroke-dasharray="4 4"/>
+          <path d="M620 140 L680 140" stroke="#10b981" stroke-width="2" stroke-dasharray="4 4"/>
+          <polygon points="198,136 206,140 198,144" fill="#10b981"/>
+          <polygon points="358,136 366,140 358,144" fill="#10b981"/>
+          <polygon points="518,136 526,140 518,144" fill="#10b981"/>
+          <polygon points="678,136 686,140 678,144" fill="#10b981"/>
+
+          <!-- ステップ1 -->
+          <rect x="40" y="80" width="120" height="120" rx="12" fill="white" stroke="#10b981" stroke-width="2"/>
+          <circle cx="100" cy="115" r="20" fill="url(#grad1)"/>
+          <path d="M92 115 L98 121 L108 109" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <text x="100" y="165" text-anchor="middle" font-size="12" font-weight="600" fill="#0f172a">手技実施</text>
+          <text x="100" y="182" text-anchor="middle" font-size="10" fill="#64748b">実作業</text>
+
+          <!-- ステップ2 -->
+          <rect x="200" y="80" width="120" height="120" rx="12" fill="white" stroke="#10b981" stroke-width="2"/>
+          <circle cx="260" cy="115" r="20" fill="url(#grad1)"/>
+          <path d="M250 115 L255 120 L270 105" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <text x="260" y="165" text-anchor="middle" font-size="12" font-weight="600" fill="#0f172a">計測</text>
+          <text x="260" y="182" text-anchor="middle" font-size="10" fill="#64748b">可視化</text>
+
+          <!-- ステップ3 -->
+          <rect x="360" y="80" width="120" height="120" rx="12" fill="white" stroke="#10b981" stroke-width="2"/>
+          <circle cx="420" cy="115" r="20" fill="url(#grad1)"/>
+          <path d="M410 115 L415 120 L430 105" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <text x="420" y="165" text-anchor="middle" font-size="12" font-weight="600" fill="#0f172a">振り返り</text>
+          <text x="420" y="182" text-anchor="middle" font-size="10" fill="#64748b">言語化</text>
+
+          <!-- ステップ4 -->
+          <rect x="520" y="80" width="120" height="120" rx="12" fill="white" stroke="#10b981" stroke-width="2"/>
+          <circle cx="580" cy="115" r="20" fill="url(#grad1)"/>
+          <path d="M570 115 L575 120 L590 105" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <text x="580" y="165" text-anchor="middle" font-size="12" font-weight="600" fill="#0f172a">改善</text>
+          <text x="580" y="182" text-anchor="middle" font-size="10" fill="#64748b">メニュー</text>
+
+          <!-- ステップ5（ループ） -->
+          <rect x="680" y="80" width="120" height="120" rx="12" fill="white" stroke="#10b981" stroke-width="2"/>
+          <circle cx="740" cy="115" r="20" fill="url(#grad1)"/>
+          <path d="M730 115 L735 120 L750 105" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <text x="740" y="165" text-anchor="middle" font-size="12" font-weight="600" fill="#0f172a">次の練習</text>
+          <text x="740" y="182" text-anchor="middle" font-size="10" fill="#64748b">継続</text>
+
+          <!-- ループ矢印 -->
+          <path d="M740 200 Q740 250 100 250 Q60 250 60 200" stroke="#10b981" stroke-width="2" stroke-dasharray="6 4" fill="none"/>
+          <polygon points="70,198 66,206 74,204" fill="#10b981"/>
+        </svg>
+      </div>
+
+      <div class="mt-12 grid gap-6 sm:grid-cols-3 text-center">
+        <div class="rounded-xl bg-white p-5 shadow-sm border border-slate-100">
+          <span class="text-xs font-semibold text-emerald-600">STEP 1</span>
+          <h3 class="mt-2 font-semibold text-slate-900">計測（可視化）</h3>
+          <p class="mt-1 text-sm text-slate-600">作業の流れ・手順・動作の特徴を捉え、比較できる形にします。</p>
         </div>
-        <div class="rounded-2xl border border-slate-200 p-6">
-          <div class="text-sm font-semibold">教える人で言うことが違う</div>
-          <p class="mt-2 text-sm text-slate-700">
-            暗黙知が多く、コツが言語化されていない。
-          </p>
+        <div class="rounded-xl bg-white p-5 shadow-sm border border-slate-100">
+          <span class="text-xs font-semibold text-emerald-600">STEP 2</span>
+          <h3 class="mt-2 font-semibold text-slate-900">振り返り（言語化）</h3>
+          <p class="mt-1 text-sm text-slate-600">どこで詰まったか、何がブレたかを短時間で振り返れます。</p>
         </div>
-        <div class="rounded-2xl border border-slate-200 p-6">
-          <div class="text-sm font-semibold">焦り・緊張で手がブレる</div>
-          <p class="mt-2 text-sm text-slate-700">
-            手順が頭に入っていても、実作業で再現できない。
-          </p>
+        <div class="rounded-xl bg-white p-5 shadow-sm border border-slate-100">
+          <span class="text-xs font-semibold text-emerald-600">STEP 3</span>
+          <h3 class="mt-2 font-semibold text-slate-900">改善メニュー</h3>
+          <p class="mt-1 text-sm text-slate-600">弱点に合わせた練習メニューで、次回の成功確率を上げます。</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- How -->
-  <section id="how" class="border-t border-slate-200 bg-slate-50">
-    <div class="mx-auto max-w-6xl px-4 py-12">
-      <h2 class="text-2xl font-bold tracking-tight">どうやって上達を支援するの？</h2>
-      <p class="mt-2 text-sm text-slate-700">
-        “計測 → 振り返り → 改善” を回して、上達の再現性をつくります。
-      </p>
-
-      <div class="mt-6 grid gap-4 md:grid-cols-3">
-        <div class="rounded-2xl bg-white border border-slate-200 p-6">
-          <div class="text-xs font-semibold text-emerald-700">STEP 1</div>
-          <div class="mt-2 text-sm font-semibold">手技を計測（可視化）</div>
-          <p class="mt-2 text-sm text-slate-700">
-            作業の流れ・手順・動作の特徴を捉え、比較できる形にします。
-          </p>
-        </div>
-        <div class="rounded-2xl bg-white border border-slate-200 p-6">
-          <div class="text-xs font-semibold text-emerald-700">STEP 2</div>
-          <div class="mt-2 text-sm font-semibold">振り返り（原因の言語化）</div>
-          <p class="mt-2 text-sm text-slate-700">
-            どこで詰まったか、何がブレたかを短時間で振り返れます。
-          </p>
-        </div>
-        <div class="rounded-2xl bg-white border border-slate-200 p-6">
-          <div class="text-xs font-semibold text-emerald-700">STEP 3</div>
-          <div class="mt-2 text-sm font-semibold">改善メニュー（次の一手）</div>
-          <p class="mt-2 text-sm text-slate-700">
-            弱点に合わせた練習メニューで、次回の成功確率を上げます。
-          </p>
-        </div>
+  <!-- 効果 - 教育効果グラフ -->
+  <section id="effect" class="border-t border-slate-200 py-20">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="text-center">
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">導入による効果</h2>
+        <p class="mt-3 text-lg text-slate-600">PoC実施事例に基づくイメージ（※実際の効果は環境により異なります）</p>
       </div>
-    </div>
-  </section>
 
-  <!-- FAQ -->
-  <section class="border-t border-slate-200 bg-white">
-    <div class="mx-auto max-w-6xl px-4 py-12">
-      <h2 class="text-2xl font-bold tracking-tight">FAQ</h2>
-      <div class="mt-6 space-y-3">
-        <details class="rounded-2xl border border-slate-200 p-5">
-          <summary class="cursor-pointer font-semibold">初心者でも使えますか？</summary>
-          <p class="mt-2 text-sm text-slate-700">
-            はい。上達のための「振り返りの型」を提供するため、経験が浅いほど効果が出やすい設計です。
-          </p>
-        </details>
-        <details class="rounded-2xl border border-slate-200 p-5">
-          <summary class="cursor-pointer font-semibold">医療的な効果を保証するものですか？</summary>
-          <p class="mt-2 text-sm text-slate-700">
-            本サービスは教育・技能支援を目的としています。個別の研究成果や医療効果を保証するものではありません。
-          </p>
-        </details>
-        <details class="rounded-2xl border border-slate-200 p-5">
-          <summary class="cursor-pointer font-semibold">費用はどれくらいですか？</summary>
-          <p class="mt-2 text-sm text-slate-700">
-            PoC（試行）設計や利用形態により異なります。まずは状況を伺い、最小構成から提案します。
-          </p>
-        </details>
-      </div>
-    </div>
-  </section>
+      <!-- 効果グラフ SVG -->
+      <div class="mt-12 overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 shadow-sm lg:p-8">
+        <div class="flex flex-col lg:flex-row gap-8 items-center">
+          <div class="flex-1 w-full">
+            <svg class="w-full h-64 lg:h-72" viewBox="0 0 500 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- グリッド -->
+              <line x1="60" y1="20" x2="60" y2="180" stroke="#e2e8f0" stroke-width="1"/>
+              <line x1="60" y1="180" x2="480" y2="180" stroke="#e2e8f0" stroke-width="1"/>
+              <line x1="60" y1="100" x2="480" y2="100" stroke="#f1f5f9" stroke-width="1"/>
+              <line x1="60" y1="140" x2="480" y2="140" stroke="#f1f5f9" stroke-width="1"/>
 
-  <!-- CTA -->
-  <section id="cta" class="border-t border-slate-200 bg-slate-900 text-white">
-    <div class="mx-auto max-w-6xl px-4 py-12">
-      <div class="grid gap-6 md:grid-cols-2 md:items-center">
-        <div>
-          <h2 class="text-2xl font-bold tracking-tight">学習者向けデモを見てみる</h2>
-          <p class="mt-2 text-sm text-slate-200">
-            研究室の条件や学習者のレベルに合わせて、PoCの設計から一緒に詰められます。
-          </p>
-        </div>
-        <div class="rounded-2xl bg-white/5 p-6 border border-white/10">
-          <p class="text-sm text-slate-200">連絡手段（仮）</p>
-          <p class="mt-2 text-sm text-slate-100">
-            ここは後で「問い合わせフォーム」または「メール・カレンダーリンク」に置き換えます。
-          </p>
-          <div class="mt-4 flex flex-col gap-3 sm:flex-row">
-            <a href="#" class="inline-flex items-center justify-center rounded-xl bg-emerald-600 px-5 py-3 font-semibold hover:bg-emerald-700">
-              フォーム（後で差し替え）
-            </a>
-            <a href="../" class="inline-flex items-center justify-center rounded-xl border border-white/20 px-5 py-3 font-semibold hover:bg-white/10">
-              トップへ
-            </a>
+              <!-- 凡例 -->
+              <rect x="340" y="10" width="12" height="12" rx="2" fill="#ef4444" fill-opacity="0.7"/>
+              <text x="358" y="20" font-size="11" fill="#64748b">従来</text>
+              <rect x="400" y="10" width="12" height="12" rx="2" fill="#10b981"/>
+              <text x="418" y="20" font-size="11" fill="#64748b">手技教育導入後</text>
+
+              <!-- Y軸 -->
+              <text x="45" y="30" font-size="10" fill="#64748b">100</text>
+              <text x="45" y="100" font-size="10" fill="#64748b">60</text>
+              <text x="45" y="180" font-size="10" fill="#64748b">0</text>
+              <text x="15" y="100" font-size="10" fill="#64748b" transform="rotate(-90,15,100)">再現性スコア</text>
+
+              <!-- 従来の線（低め・横ばい） -->
+              <path d="M100 150 Q170 155 240 148 Q310 145 380 142 Q420 140 460 138" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-opacity="0.8"/>
+              <path d="M100 150 Q170 155 240 148 Q310 145 380 142 Q420 140 460 138 L460 180 L100 180 Z" fill="#ef4444" fill-opacity="0.08"/>
+
+              <!-- 手技教育導入後の線（上昇） -->
+              <path d="M100 160 Q170 130 240 100 Q310 75 380 55 Q420 45 460 40" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <path d="M100 160 Q170 130 240 100 Q310 75 380 55 Q420 45 460 40 L460 180 L100 180 Z" fill="#10b981" fill-opacity="0.12"/>
+
+              <!-- X軸ラベル -->
+              <text x="100" y="200" font-size="10" fill="#64748b" text-anchor="middle">1週</text>
+              <text x="240" y="200" font-size="10" fill="#64748b" text-anchor="middle">4週</text>
+              <text x="380" y="200" font-size="10" fill="#64748b" text-anchor="middle">8週</text>
+              <text x="460" y="200" font-size="10" fill="#64748b" text-anchor="middle">12週</text>
+            </svg>
+          </div>
+          <div class="w-full lg:w-64 space-y-4">
+            <div class="rounded-xl bg-emerald-50 border border-emerald-100 p-4">
+              <p class="text-2xl font-bold text-emerald-700">約30%</p>
+              <p class="text-sm text-slate-600">戦力化までの期間短縮（イメージ）</p>
+            </div>
+            <div class="rounded-xl bg-slate-50 border border-slate-200 p-4">
+              <p class="text-2xl font-bold text-slate-800">明確化</p>
+              <p class="text-sm text-slate-600">改善ポイントと次の一手が可視化</p>
+            </div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <p class="mt-8 text-xs text-slate-400">
-        © 手技教育 デモLP
-      </p>
+  <!-- ユースケース -->
+  <section id="usecase" class="border-t border-slate-200 bg-slate-50/80 py-20">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="text-center">
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">こんな方に</h2>
+        <p class="mt-3 text-lg text-slate-600">手技教育が役立つシーン</p>
+      </div>
+
+      <div class="mt-12 grid gap-6 sm:grid-cols-3">
+        <div class="rounded-2xl bg-white p-6 shadow-sm border border-slate-100 hover:shadow-md transition-all">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-100 text-emerald-600">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+          </div>
+          <h3 class="mt-4 font-semibold text-slate-900">研究室に新規配属</h3>
+          <p class="mt-2 text-sm text-slate-600">細胞培養をこれから習得する新人。先輩に聞くだけでなく、自分の改善点をデータで確認したい。</p>
+        </div>
+        <div class="rounded-2xl bg-white p-6 shadow-sm border border-slate-100 hover:shadow-md transition-all">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-teal-100 text-teal-600">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+          </div>
+          <h3 class="mt-4 font-semibold text-slate-900">スキルアップしたい</h3>
+          <p class="mt-2 text-sm text-slate-600">ある程度できるが、再現性や精度を上げたい。自分の「クセ」や弱点を客観的に把握したい。</p>
+        </div>
+        <div class="rounded-2xl bg-white p-6 shadow-sm border border-slate-100 hover:shadow-md transition-all">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-100 text-cyan-600">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+          </div>
+          <h3 class="mt-4 font-semibold text-slate-900">研修・教育プログラム受講中</h3>
+          <p class="mt-2 text-sm text-slate-600">研修会社や大学のプログラムで細胞培養を学ぶ。到達度を可視化し、効率的に習得したい。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA - 改善 -->
+  <section id="cta" class="border-t border-slate-200 py-20">
+    <div class="mx-auto max-w-6xl px-6">
+      <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-emerald-500 to-teal-600 px-6 py-16 text-center shadow-xl shadow-emerald-500/25 lg:px-16 lg:py-20">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.05\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-50"></div>
+        <div class="relative">
+          <h2 class="text-2xl font-bold text-white sm:text-3xl lg:text-4xl">細胞培養の上達を、<br />データで加速しませんか？</h2>
+          <p class="mt-4 text-lg text-emerald-50 max-w-xl mx-auto">
+            無料デモで、あなたの環境に合わせた使い方をご提案します。PoCの設計から一緒に詰められます。
+          </p>
+          <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#" class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-8 py-4 text-base font-semibold text-emerald-600 shadow-lg hover:bg-emerald-50 transition-colors">
+              無料デモを申し込む
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+            </a>
+            <a href="../org/" class="inline-flex items-center justify-center rounded-xl border-2 border-white/60 px-8 py-4 text-base font-semibold text-white hover:bg-white/10 transition-colors">
+              組織向けページを見る
+            </a>
+          </div>
+          <p class="mt-6 text-sm text-emerald-100">問い合わせフォームまたはカレンダーリンクで対応予定</p>
+        </div>
+      </div>
+
+      <p class="mt-8 text-center text-xs text-slate-500">© 手技教育 デモLP</p>
     </div>
   </section>
 </body>
